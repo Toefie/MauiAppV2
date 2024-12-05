@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MauiApp2.MainTabbedPage"
+            Title="Main Page">
+
+    <!-- Eerste Tab: Grid Layout -->
+    <ContentPage Title="Grid Layout">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Elementen in Grid -->
+            <Label Text="Grid Item 1" BackgroundColor="LightBlue" Grid.Row="0" Grid.Column="0" />
+            <Label Text="Grid Item 2" BackgroundColor="LightCoral" Grid.Row="0" Grid.Column="1" />
+            <Label Text="Grid Item 3" BackgroundColor="LightGreen" Grid.Row="1" Grid.ColumnSpan="2" />
+            <Label Text="Grid Item 4" BackgroundColor="Black"  Grid.Row="2" Grid.Column="0" />
+            <Label Text="Grid Item 5" BackgroundColor="LightPink" Grid.Row="2" Grid.Column="1" />
+        </Grid>
+    </ContentPage>
+
+    <!-- Tweede Tab: Flex Layout -->
+    <ContentPage Title="Flex Layout">
+        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween" Wrap="Wrap">
+            <Label Text="Item 1" BackgroundColor="LightBlue" WidthRequest="100" />
+            <Label Text="Item 2" BackgroundColor="LightCoral" WidthRequest="100" />
+            <Label Text="Item 3" BackgroundColor="LightGreen" WidthRequest="100" />
+            <Label Text="Item 4" BackgroundColor="Aquamarine" WidthRequest="100" />
+            <Label Text="Item 5" BackgroundColor="BurlyWood" WidthRequest="100" />
+            <Label Text="Item 6" BackgroundColor="CornflowerBlue"  WidthRequest="100" />
+            
+        </FlexLayout>
+    </ContentPage>
+
+    <!-- Derde Tab: Stack Layout -->
+    <ContentPage Title="Stack Layout">
+        <StackLayout Orientation="Vertical" Spacing="10" Padding="20">
+            <Label Text="Item 1" BackgroundColor="LightBlue" HeightRequest="50" />
+            <Label Text="Item 2" BackgroundColor="LightCoral" HeightRequest="50" />
+            <Label Text="Item 3" BackgroundColor="LightGreen" HeightRequest="50" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

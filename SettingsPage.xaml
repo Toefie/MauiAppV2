@@ -1,0 +1,13 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.SettingsPage"
+             Title="Settings">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Settings" FontSize="24" HorizontalOptions="Center" />
+        <HorizontalStackLayout VerticalOptions="Center">
+            <Label Text="Dark Mode" FontSize="18" VerticalOptions="Center" />
+            <Switch Toggled="OnDarkModeToggled" />
+        </HorizontalStackLayout>
+        <Button Text="Back" Clicked="OnBackClicked" />
+    </VerticalStackLayout>
+</ContentPage>
