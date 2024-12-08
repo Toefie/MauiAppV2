@@ -1,0 +1,22 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.QuestionPage"
+             Title="Questions">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Questions" FontSize="24" HorizontalOptions="Center" />
+        <CollectionView x:Name="QuestionsList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Text}" FontSize="18" />
+                        <Label Text="{Binding Category}" FontSize="14" TextColor="Gray" />
+                        <Label Text="{Binding Difficulty, StringFormat='Difficulty: {0}★'}" FontSize="14" TextColor="Gray" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!-- Knop om naar Scoreboard te navigeren -->
+        <Button Text="Go to Scoreboard" Clicked="OnScoreboardClicked" />
+        <Button Text="Back" Clicked="OnBackClicked" />
+    </VerticalStackLayout>
+</ContentPage>

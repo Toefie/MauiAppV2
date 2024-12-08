@@ -7,5 +7,6 @@
         <Button Text="Add Names" Clicked="OnAddNamesClicked" />
         <Button Text="Add Question" Clicked="OnAddQuestionClicked" />
         <Button Text="Back to Home" Clicked="OnBackClicked" />
+        <Button Text="Start Game" Clicked="OnStartGameClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -3,7 +3,18 @@
              x:Class="MauiApp2.HomePage"
              Title="Home">
     <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Welcome to the Home Page!" FontSize="24" HorizontalOptions="Center" />
-        <Button Text="Go Back" Clicked="OnGoBackClicked" />
+        <Label Text="Welcome to Truth or Drink!" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Button to Start Game -->
+        <Button Text="Start Game" Clicked="OnStartGameClicked" />
+
+        <!-- Button to Add Question -->
+        <Button Text="Add Question" Clicked="OnAddQuestionClicked" />
+
+        <!-- Button to Navigate to Settings -->
+        <Button Text="Settings" Clicked="OnSettingsClicked" />
+
+        <!-- Button to Navigate to Scoreboard -->
+        <Button Text="Scoreboard" Clicked="OnScoreboardClicked" />
     </VerticalStackLayout>
-    </ContentPage>
+</ContentPage>

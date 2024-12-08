@@ -22,15 +22,18 @@ public partial class AddQuestionPage : ContentPage
             return;
         }
 
-        // Simuleer het opslaan van de vraag
+        // Verkrijg de ingevoerde vraag, categorie en moeilijkheidsgraad
         string question = QuestionEntry.Text;
         string category = CategoryPicker.SelectedItem.ToString();
+        int difficulty = (int)DifficultySlider.Value;
 
-        await DisplayAlert("Success", $"Question added:\n\n{question}\nCategory: {category}", "OK");
+        // Simuleer het opslaan van de vraag
+        await DisplayAlert("Success", $"Question added:\n\nQuestion: {question}\nCategory: {category}\nDifficulty: {difficulty} stars", "OK");
 
         // Wis velden na opslaan
         QuestionEntry.Text = string.Empty;
         CategoryPicker.SelectedItem = null;
+        DifficultySlider.Value = 3;
 
         // Keer terug naar de vorige pagina
         await Navigation.PopAsync();

@@ -2,12 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.AddNamesPage"
              Title="Add Names">
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Label Text="Add Player Names" FontSize="24" HorizontalOptions="Center" />
-        <Entry Placeholder="Name 1" />
-        <Entry Placeholder="Name 2" />
-        <Entry Placeholder="Name 3" />
-        <Button Text="Submit" Clicked="OnSubmitClicked" />
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Add Names for the Game" FontSize="24" HorizontalOptions="Center" />
+        <Entry Placeholder="Player Name 1" />
+        <Entry Placeholder="Player Name 2" />
+        <Entry Placeholder="Player Name 3" />
+        <Entry Placeholder="Player Name 4" />
+        <Button Text="Start Game" Clicked="OnStartGameClicked" />  
         <Button Text="Back" Clicked="OnBackClicked" />
     </VerticalStackLayout>
 </ContentPage>

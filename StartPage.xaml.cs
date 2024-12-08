@@ -7,6 +7,13 @@ public partial class StartPage : ContentPage
         InitializeComponent();
     }
 
+    private async void OnStartGameClicked(object sender, EventArgs e)
+    {
+        // Navigate to Add Names Page
+        await Navigation.PushAsync(new AddNamesPage());
+    }
+
+
     private async void OnAddNamesClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new AddNamesPage());

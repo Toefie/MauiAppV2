@@ -9,4 +9,5 @@ public partial class App : Application
         // Instellen van de NavigationPage met LoginPage als root
         MainPage = new NavigationPage(new LoginPage());
     }
+
 }

@@ -2,9 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.AddQuestionPage"
              Title="Add Question">
-    <VerticalStackLayout Padding="20" Spacing="10">
+    <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Add a New Question" FontSize="24" HorizontalOptions="Center" />
-        <Entry Placeholder="Enter your question here..." x:Name="QuestionEntry" />
+
+        <!-- Vraag invoeren -->
+        <Entry x:Name="QuestionEntry" Placeholder="Enter your question here..." />
+
+        <!-- Categorie selectie -->
         <Picker x:Name="CategoryPicker" Title="Select a category">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -14,6 +18,14 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+
+        <!-- Moeilijkheidsslider -->
+        <Label Text="Select Difficulty (1-5)" HorizontalOptions="Center" />
+        <Slider x:Name="DifficultySlider" Minimum="1" Maximum="5" Value="3" />
+        <Label Text="{Binding Source={x:Reference DifficultySlider}, Path=Value, StringFormat='Difficulty: {0:N0} stars'}"
+               HorizontalOptions="Center" />
+
+        <!-- Knoppen -->
         <Button Text="Submit" Clicked="OnSubmitClicked" />
         <Button Text="Back" Clicked="OnBackClicked" />
     </VerticalStackLayout>
