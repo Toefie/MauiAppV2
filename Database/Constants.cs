@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui.Storage;
 
 namespace MauiApp2.Database
 {
     public static class Constants
     {
-        private const string DBFilename = "MauiApp2.db1";
+        private const string DBFilename = "MauiApp2.db";
 
         public const SQLiteOpenFlags flags =
             SQLiteOpenFlags.ReadWrite |

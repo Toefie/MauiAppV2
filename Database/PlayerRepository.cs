@@ -1,41 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
 using MauiApp2.Models;
-using SQLite;
-
 
 namespace MauiApp2.Database
 {
     public class PlayerRepository
     {
-        SQLiteConnection connection;
-        public string? statusMessage {  get; set; }
-        
+        private SQLiteConnection connection;
+
         public PlayerRepository()
         {
-            connection = new SQLiteConnection(
-                Constants.DatabasePath,
-                Constants.flags );
+            connection = new SQLiteConnection(Constants.DatabasePath, Constants.flags);
             connection.CreateTable<Player>();
         }
-   
-        public void Add( Player newPlayer )
-        {
-            int result = 0;
-            try
-            {
-                result = connection.Insert(newPlayer);
-                statusMessage = $"{result} row(s) added";
-            }
-            catch (Exception ex)
-            { 
-                statusMessage = $"Error: {ex.Message}";
-            
-            }
 
+        public void AddPlayer(Player player)
+        {
+            connection.Insert(player);
+        }
+
+        public List<Player> GetAllPlayers()
+        {
+            return connection.Table<Player>().ToList();
+        }
+
+        public void DeletePlayer(int playerId)
+        {
+            connection.Delete<Player>(playerId);
         }
     }
 }
+
+

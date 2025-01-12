@@ -1,0 +1,44 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApp2.ViewModels"
+             x:Class="MauiApp2.Views.QuestionPage"
+             Title="Manage Questions">
+
+    <ContentPage.BindingContext>
+        <viewmodels:QuestionViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Manage Questions" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Lijst met bestaande vragen -->
+        <CollectionView ItemsSource="{Binding Questions}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Entry Text="{Binding Text}" Placeholder="Question Text" />
+                        <Entry Text="{Binding Category}" Placeholder="Category" />
+                        <Entry Text="{Binding Difficulty}" Placeholder="Difficulty (1-5)" Keyboard="Numeric" />
+                        <HorizontalStackLayout>
+                            <Button Text="Save" 
+                                    Command="{Binding Source={x:Reference ContentPage}, Path=BindingContext.UpdateQuestionCommand}" 
+                                    CommandParameter="{Binding}" />
+                            <Button Text="Delete" 
+                                    Command="{Binding Source={x:Reference ContentPage}, Path=BindingContext.DeleteQuestionCommand}" 
+                                    CommandParameter="{Binding}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Formulier om een nieuwe vraag toe te voegen -->
+        <StackLayout Padding="10">
+            <Label Text="Add New Question" FontSize="18" HorizontalOptions="Center" />
+            <Entry Placeholder="Question Text" Text="{Binding NewQuestionText}" />
+            <Entry Placeholder="Category" Text="{Binding NewQuestionCategory}" />
+            <Entry Placeholder="Difficulty (1-5)" Text="{Binding NewQuestionDifficulty}" Keyboard="Numeric" />
+            <Button Text="Add Question" Command="{Binding AddQuestionCommand}" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -43,7 +43,6 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -57,10 +56,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="Resources\Splash\splash.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.6.1" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.21" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.21" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
@@ -68,46 +73,49 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="CategoryPage.xaml.cs">
+	  <Compile Update="View\CategoryPage.xaml.cs">
 	    <DependentUpon>CategoryPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddNamesPage.xaml">
+	  <MauiXaml Update="View\GamePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="AddQuestionPage.xaml">
+	  <MauiXaml Update="View\AddNamesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="CategoryPage.xaml">
+	  <MauiXaml Update="View\AddQuestionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="HomePage.xaml">
+	  <MauiXaml Update="View\CategoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <MauiXaml Update="View\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MainTabbedPage.xaml">
+	  <MauiXaml Update="View\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="QuestionPage.xaml">
+	  <MauiXaml Update="View\MainTabbedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RegisterPage.xaml">
+	  <MauiXaml Update="View\QuestionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ScoreboardPage.xaml">
+	  <MauiXaml Update="View\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SettingsPage.xaml">
+	  <MauiXaml Update="View\ScoreboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="StartPage.xaml">
+	  <MauiXaml Update="View\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="WildcardPage.xaml">
+	  <MauiXaml Update="View\StartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\WildcardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

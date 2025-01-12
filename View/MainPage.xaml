@@ -1,0 +1,12 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="Start Page">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Welkom op de Startpagina!" FontSize="24" HorizontalOptions="Center" />
+
+        <Button Text="Ga naar Spel" Clicked="OnStartGameClicked" />
+        <Button Text="Beheer Vragen" Clicked="OnManageQuestionsClicked" />
+    </VerticalStackLayout>
+</ContentPage>

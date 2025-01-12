@@ -1,10 +1,17 @@
-﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp2.QuestionPage"
-             Title="Questions">
+             xmlns:viewmodels="clr-namespace:MauiApp2.ViewModels"
+             x:Class="MauiApp2.Views.GamePage"
+             Title="Game">
+
+    <ContentPage.BindingContext>
+        <viewmodels:GameViewModel />
+    </ContentPage.BindingContext>
+
     <VerticalStackLayout Padding="20">
-        <Label Text="Questions" FontSize="24" HorizontalOptions="Center" />
-        <CollectionView x:Name="QuestionsList">
+        <Label Text="Game Questions" FontSize="24" HorizontalOptions="Center" />
+
+        <CollectionView ItemsSource="{Binding Questions}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout>
@@ -15,8 +22,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <!-- Knop om naar Scoreboard te navigeren -->
-        <Button Text="Go to Scoreboard" Clicked="OnScoreboardClicked" />
-        <Button Text="Back" Clicked="OnBackClicked" />
+
+        <Button Text="Load Random Questions" Command="{Binding LoadRandomQuestionsCommand}" />
+        <Button Text="Load Truth Questions" Command="{Binding LoadQuestionsByCategoryCommand}" CommandParameter="Truth" />
     </VerticalStackLayout>
 </ContentPage>

@@ -6,8 +6,7 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        // Instellen van de NavigationPage met LoginPage als root
-        MainPage = new NavigationPage(new LoginPage());
+        // Zet de SplashScreen en navigeer daarna naar MainPage
+        MainPage = new NavigationPage(new MainPage());
     }
-
 }

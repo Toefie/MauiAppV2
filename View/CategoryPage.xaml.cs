@@ -1,3 +1,5 @@
+using MauiApp2.Views;
+
 namespace MauiApp2;
 
 public partial class CategoryPage : ContentPage
